@@ -4,7 +4,7 @@ import "mapbox-gl/src/css/mapbox-gl.css";
 
 const Map = ({ lat, lng }) => {
   mapboxgl.accessToken =
-    "pk.eyJ1IjoibGtuYXJmIiwiYSI6IjhjbGg4RUkifQ.-lS6mAkmR3SVh-W4XwQElg";
+    "pk.eyJ1IjoiYXphdmVhIiwiYSI6IkFmMFBYUUUifQ.eYn6znWt8NzYOa3OrWop8A";
 
   const [mounted, setMounted] = useState(false);
 
@@ -14,7 +14,7 @@ const Map = ({ lat, lng }) => {
       const map = new mapboxgl.Map({
         cooperativeGestures: true,
         container: "map",
-        style: "mapbox://styles/lknarf/cl0pf3asg000114nt5jepzs6s",
+        style: "mapbox://styles/azavea/cl13tu2j1002t14mzcd97p8qi?optimize=true",
         center: [lng, lat],
         minZoom: 8,
         zoom: 10,
