@@ -2,9 +2,6 @@ import Airtable from "airtable";
 import Head from "next/head";
 import Link from "next/link";
 
-import Map from "/components/Map"
-import styles from "/styles/Index.module.css";
-
 export async function getStaticProps() {
   const airtable = new Airtable({
     apiKey: process.env.AIRTABLE_API_KEY,
@@ -25,7 +22,6 @@ export async function getStaticProps() {
     };
   });
 
-
   return {
     props: {
       communities,
@@ -33,19 +29,21 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({communities}) {
+export default function Home({ communities }) {
   return (
     <>
       <Head>
-        <title>
-          Our app
-        </title>
+        <title>Our app</title>
         <meta
           name="description"
           content="Current and forecasted landslide risk for Sitka, Alaska."
         />
       </Head>
-      <div>{communities.map(community=><div>{community.name}</div>)}</div>
+      <div>
+        {communities.map((community) => (
+          <div>{community.name}</div>
+        ))}
+      </div>
     </>
   );
 }
