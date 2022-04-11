@@ -29,7 +29,10 @@ const Map = ({ lat, lng }) => {
       // setLoaded(true);
 
       map.on("load", function () {
-        setLoaded(true);
+        // Artificially slow down load time
+        setTimeout(function () {
+          setLoaded(true);
+        }, 250);
       });
 
       map.addControl(nav, "bottom-right");
@@ -46,7 +49,7 @@ const Map = ({ lat, lng }) => {
 
           .map {
             width: 100%;
-            height: 100vh;
+            height: 66.6vh;
             background: #ccc;
           }
           .mapboxgl-ctrl button.mapboxgl-ctrl-zoom-out .mapboxgl-ctrl-icon {

@@ -3,74 +3,22 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+import getCommunities from "/lib/getCommunities";
 import Page from "/components/Page";
 import Map from "/components/Map";
 import styles from "/styles/App.module.css";
 
 export async function getStaticPaths() {
-  const airtable = new Airtable({
-    apiKey: process.env.AIRTABLE_API_KEY,
-  });
-
-  const records = await airtable
-    .base("appi2zZaHEKWDWKt6")("Communities")
-    .select({
-      fields: ["name", "lat", "lng", "slug"],
-    })
-    .all();
-
-  const communities = records.map((product) => {
-    return {
-      name: product.get("name"),
-      lat: product.get("lat"),
-      lng: product.get("lng"),
-      slug: product.get("slug"),
-    };
-  });
+  const communities = await getCommunities();
 
   return {
-    paths: communities.map((community) => {
-      return {
-        params: community,
-      };
-    }),
+    paths: [],
     fallback: "blocking",
   };
 }
 
 export async function getStaticProps({ params }) {
-  const airtable = new Airtable({
-    apiKey: process.env.AIRTABLE_API_KEY,
-  });
-
-  const records = await airtable
-    .base("appi2zZaHEKWDWKt6")("Communities")
-    .select({
-      fields: [
-        "name",
-        "lat",
-        "lng",
-        "slug",
-        "rank",
-        "risk",
-        "country",
-        "population",
-      ],
-    })
-    .all();
-
-  const communities = records.map((product) => {
-    return {
-      name: product.get("name"),
-      lat: product.get("lat"),
-      lng: product.get("lng"),
-      slug: product.get("slug"),
-      rank: product.get("rank"),
-      risk: product.get("risk"),
-      country: product.get("country"),
-      population: product.get("population"),
-    };
-  });
+  const communities = await getCommunities();
 
   const community = communities.find(
     (community) => community.slug === params.slug
@@ -94,7 +42,7 @@ export default function Detail({ community, communities }) {
       </Head>
       <div className={styles.app}>
         <div className={styles.content}>
-          <h3>Hazard risk: {community.risk}</h3>
+          <h3>Overview</h3>
 
           <p className="large">
             {community.name} has a hazard risk of {community.risk} of 3—in the
@@ -111,7 +59,9 @@ export default function Detail({ community, communities }) {
           <ul>
             {communities.map((community) => (
               <li>
-                <a href={`/community/${community.slug}`}>{community.name}</a>
+                <a href={`/community/${community.slug}/overview`}>
+                  {community.name}
+                </a>
               </li>
             ))}
           </ul>

@@ -3,38 +3,13 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+import getCommunities from "/lib/getCommunities";
 import Page from "/components/Page";
 import Map from "/components/Map";
 import styles from "/styles/App.module.css";
 
 export async function getStaticPaths() {
-  const airtable = new Airtable({
-    apiKey: process.env.AIRTABLE_API_KEY,
-  });
-
-  const records = await airtable
-    .base("appi2zZaHEKWDWKt6")("Communities")
-    .select({
-      fields: ["name", "lat", "lng", "slug"],
-    })
-    .all();
-
-  const communities = records.map((product) => {
-    return {
-      name: product.get("name"),
-      lat: product.get("lat"),
-      lng: product.get("lng"),
-      slug: product.get("slug"),
-    };
-  });
-
-  // return {
-  //   props: {
-  //     communities,
-  //   },
-  // };
-
-  console.log(communities);
+  const communities = await getCommunities();
 
   return {
     paths: communities.map((community) => {
@@ -102,6 +77,7 @@ export default function Detail({ community, communities }) {
       </Head>
       <div className={styles.app}>
         <div className={styles.content}>
+          <h3>Hazard</h3>
           <p className="large">
             {community.name} will see increased hazards in the future—in
             addition to risk that it will also experience. Did we mention hazard
@@ -121,7 +97,9 @@ export default function Detail({ community, communities }) {
           <ul>
             {communities.map((community) => (
               <li>
-                <a href={`/community/${community.slug}`}>{community.name}</a>
+                <a href={`/community/${community.slug}/hazard`}>
+                  {community.name}
+                </a>
               </li>
             ))}
           </ul>
