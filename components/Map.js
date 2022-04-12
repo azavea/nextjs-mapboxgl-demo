@@ -15,7 +15,7 @@ const Map = ({ lat, lng }) => {
       const map = new mapboxgl.Map({
         cooperativeGestures: true,
         container: "map",
-        style: "mapbox://styles/azavea/ckz3jjuxd001x15nr01wh9fve?optimize=true",
+        style: "mapbox://styles/mapbox/light-v10?optimize=true",
         center: [lng, lat],
         minZoom: 8,
         zoom: 10,
