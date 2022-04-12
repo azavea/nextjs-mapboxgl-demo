@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 
 import getCommunities from "/lib/getCommunities";
 import Page from "/components/Page";
-import Map from "/components/Map";
 import styles from "/styles/App.module.css";
 
 export async function getStaticPaths() {
@@ -103,9 +102,6 @@ export default function Detail({ community, communities }) {
               </li>
             ))}
           </ul>
-        </div>
-        <div className={styles.map}>
-          <Map lat={community.lat} lng={community.lng} />
         </div>
       </div>
     </Page>

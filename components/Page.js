@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import { withRouter, useRouter } from "next/router";
+import Map from "/components/Map";
 
 import styles from "../styles/Page.module.css";
 
