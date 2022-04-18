@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
 import { withRouter, useRouter } from "next/router";
-import Map from "/components/Map";
 
 import styles from "../styles/Page.module.css";
 
@@ -28,6 +27,13 @@ const Page = ({ children, title, slug }) => {
               <Link href={`/community/${slug}/hazard`}>
                 <a className={currentPath === "hazard" ? styles.active : ""}>
                   Hazard
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href={`/community/${slug}/third`}>
+                <a className={currentPath === "third" ? styles.active : ""}>
+                  Third
                 </a>
               </Link>
             </li>

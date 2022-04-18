@@ -1,10 +1,11 @@
-import Airtable from "airtable";
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-import getCommunities from "/lib/getCommunities";
 import Page from "/components/Page";
+import Similar from "/components/Similar";
+import getCommunities from "/lib/getCommunities";
+import matchCommunity from "/lib/matchCommunity";
 import styles from "/styles/App.module.css";
 
 export async function getStaticPaths() {
@@ -21,47 +22,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const airtable = new Airtable({
-    apiKey: process.env.AIRTABLE_API_KEY,
-  });
-
-  const records = await airtable
-    .base("appi2zZaHEKWDWKt6")("Communities")
-    .select({
-      fields: [
-        "name",
-        "lat",
-        "lng",
-        "slug",
-        "rank",
-        "risk",
-        "country",
-        "population",
-      ],
-    })
-    .all();
-
-  const communities = records.map((product) => {
-    return {
-      name: product.get("name"),
-      lat: product.get("lat"),
-      lng: product.get("lng"),
-      slug: product.get("slug"),
-      rank: product.get("rank"),
-      risk: product.get("risk"),
-      country: product.get("country"),
-      population: product.get("population"),
-    };
-  });
-
-  const community = communities.find(
-    (community) => community.slug === params.slug
-  );
+  const communities = await getCommunities();
+  const community = matchCommunity(params.slug, communities);
 
   return {
     props: {
       community,
       communities,
+      lat: 45,
+      lng: -80,
     },
   };
 }
@@ -93,17 +62,11 @@ export default function Detail({ community, communities }) {
             velit, non interdum eros magna vel ligula.
           </p>
           <h3>Similar communities</h3>
-          <ul>
-            {communities.map((community) => (
-              <li>
-                <a href={`/community/${community.slug}/hazard`}>
-                  {community.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <Similar community={community} communities={communities} />
         </div>
       </div>
     </Page>
   );
 }
+
+Detail.isApp = true;

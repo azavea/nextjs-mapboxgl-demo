@@ -1,13 +1,22 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 import getCommunities from "/lib/getCommunities";
 import matchCommunity from "/lib/matchCommunity";
 import Page from "/components/Page";
 import Similar from "/components/Similar";
+import MapActions from "/components/MapActions";
 
 import styles from "/styles/App.module.css";
+
+import { useAppSelector, useAppDispatch } from "/app/hooks";
+import {
+  decrement,
+  increment,
+  setPage,
+  selectCount,
+  selectPage,
+} from "/app/counterSlice";
 
 export async function getStaticPaths() {
   const communities = await getCommunities();
@@ -26,8 +35,6 @@ export async function getStaticProps({ params }) {
     props: {
       community,
       communities,
-      lat: 40,
-      lng: -80,
     },
   };
 }
@@ -42,7 +49,10 @@ export default function Detail({ community, communities }) {
       </Head>
       <div className={styles.app}>
         <div className={styles.content}>
-          <h3>Overview</h3>
+          <h3>Third page ... yeah, yeah!</h3>
+
+          <MapActions />
+
           <p className="large">
             {community.name} has a hazard risk of {community.risk} of 3—in the
             top {community.rank}% of communities in {community.country}.
