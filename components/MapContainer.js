@@ -1,11 +1,14 @@
-import dynamic from "next/dynamic";
+import Map from "/components/Map";
 
-const MapContainer = ({ lat, lng }) => {
-  const Map = dynamic(() => import("/components/Map"), {
-    ssr: false,
-    suspense: false,
-  });
-  return <Map lat={lat} lng={lng} />;
+const MapContainer = ({ children }) => {
+  const { lat, lng } = children.props.community;
+  console.log(children, lat, lng);
+  return (
+    <div>
+      <Map lat={lat} lng={lng} />
+      {children}
+    </div>
+  );
 };
 
 export default MapContainer;

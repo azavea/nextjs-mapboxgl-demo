@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import Page from "/components/Page";
 import Similar from "/components/Similar";
+import MapContainer from "/components/MapContainer";
+
 import getCommunities from "/lib/getCommunities";
 import matchCommunity from "/lib/matchCommunity";
 import styles from "/styles/App.module.css";
@@ -69,4 +71,4 @@ export default function Detail({ community, communities }) {
   );
 }
 
-Detail.isApp = true;
+Detail.PageLayout = MapContainer;
