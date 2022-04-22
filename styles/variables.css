@@ -29,11 +29,12 @@
   --space-200: 8px;
   --space-100: 4px;
 
-  --size-900: 36px;
-  --size-800: 21px;
-  --size-700: 18px;
-  --size-600: 16px;
-  --size-500: 14px;
+  --size-1000: 50px;
+  --size-900: 38px;
+  --size-800: 28px;
+  --size-700: 21px;
+  --size-600: 18px;
+  --size-500: 16px;
 
   --weight-black: 900;
   --weight-heavy: 800;
@@ -43,8 +44,8 @@
 
   --shadow-500: 0 0 2px rgb(0 0 0 / 0.25);
 
-  --font-family: retina, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 @supports (color: color(display-p3 1 1 1)) {

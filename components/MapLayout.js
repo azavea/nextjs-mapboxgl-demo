@@ -6,7 +6,7 @@ import styles from "/styles/App.module.css";
 import Header from "/components/Header";
 import AppNav from "/components/AppNav";
 
-const MapContainer = ({ children }) => {
+const MapLayout = ({ children }) => {
   const [loaded, setLoaded] = useState(false);
   const { lat, lng, slug, name } = children.props.community;
   const { color } = children.props;
@@ -41,6 +41,13 @@ const MapContainer = ({ children }) => {
       <div className={styles.app}>
         <div className={styles.contentWrapper}>{children}</div>
         <div className={styles.mapWrapper}>
+          <div className="spinner"></div>
+          {/*Tiny placeholder image that will load with the html, to fill in for
+          the map while it's loading*/}
+          <img
+            className={styles.placeholder}
+            src="data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAwCdASpAAEAAPzmcxF0vKqgmIgkR4CcJaQAAEFb7Lg/lYGF5oAD+7eaH4VcTTAFkgwAAAAA="
+          />
           <div
             className={styles.mapContainer}
             style={{ opacity: loaded ? 1 : 0 }}
@@ -58,6 +65,28 @@ const MapContainer = ({ children }) => {
               <Source id="my-data" type="geojson" data={geojson}>
                 <Layer {...layerStyle} />
               </Source>
+
+              {/*              <Source
+                id="my-raster"
+                type="raster"
+                tileSize={256}
+                minzoom={0}
+                maxzoom={8}
+                tiles={[
+                  "https://api.mapbox.com/styles/v1/azavea/cl2aczhot006215nzgt7tgf1p/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYXphdmVhIiwiYSI6IkFmMFBYUUUifQ.eYn6znWt8NzYOa3OrWop8A",
+                ]}
+              >
+                <Layer
+                  id="simple-tiles"
+                  type="raster"
+                  source="raster-tiles"
+                  minzoom={0}
+                  maxzoom={22}
+                  paint={{
+                    "raster-opacity": 0.5,
+                  }}
+                />
+              </Source>*/}
             </Map>
           </div>
         </div>
@@ -66,4 +95,4 @@ const MapContainer = ({ children }) => {
   );
 };
 
-export default MapContainer;
+export default MapLayout;

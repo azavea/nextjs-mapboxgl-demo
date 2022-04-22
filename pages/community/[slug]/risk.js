@@ -4,7 +4,7 @@ import Link from "next/link";
 import getCommunities from "/lib/getCommunities";
 import matchCommunity from "/lib/matchCommunity";
 import Similar from "/components/Similar";
-import MapContainer from "/components/MapContainer";
+import MapLayout from "/components/MapLayout";
 
 import styles from "/styles/App.module.css";
 
@@ -43,7 +43,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Detail({ community, communities }) {
+export default function Risk({ community, communities }) {
   return (
     <div>
       <Head>
@@ -108,4 +108,4 @@ export default function Detail({ community, communities }) {
   );
 }
 
-Detail.PageLayout = MapContainer;
+Risk.PageLayout = MapLayout;
