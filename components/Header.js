@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.left}>
-        <Link href={`/`}>
+        <Link prefetch={false} href={`/`}>
           <a className={styles.brand}>Natural Hazard Risk</a>
         </Link>
       </div>
@@ -53,7 +53,7 @@ const Header = () => {
             role="menu"
           >
             {links.map((link) => (
-              <Link key={link.permalink} href={link.permalink}>
+              <Link prefetch={false} key={link.permalink} href={link.permalink}>
                 <a>{link.text}</a>
               </Link>
             ))}

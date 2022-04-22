@@ -27,15 +27,15 @@ export default function Home({}) {
         />
         <div className={styles.example}>
           e.g.{" "}
-          <Link href="/community/new-york/overview">
+          <Link prefetch={false} href="/community/new-york/overview">
             <a>New York</a>
           </Link>
           ,{" "}
-          <Link href="/community/berkeley/overview">
+          <Link prefetch={false} href="/community/berkeley/overview">
             <a>Berkeley</a>
           </Link>
           ,{" "}
-          <Link href="/community/greater-sudsbury/overview">
+          <Link prefetch={false} href="/community/greater-sudsbury/overview">
             <a>Greater Sudsbury</a>
           </Link>
         </div>

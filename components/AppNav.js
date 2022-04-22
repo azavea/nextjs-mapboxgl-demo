@@ -16,21 +16,21 @@ const AppNav = ({ name, slug }) => {
       <nav>
         <ul>
           <li>
-            <Link href={`/community/${slug}/overview`}>
+            <Link prefetch={false} href={`/community/${slug}/overview`}>
               <a className={currentPath === "overview" ? styles.active : "hi"}>
                 Overview
               </a>
             </Link>
           </li>
           <li>
-            <Link href={`/community/${slug}/hazard`}>
+            <Link prefetch={false} href={`/community/${slug}/hazard`}>
               <a className={currentPath === "hazard" ? styles.active : ""}>
                 Hazard
               </a>
             </Link>
           </li>
           <li>
-            <Link href={`/community/${slug}/risk`}>
+            <Link prefetch={false} href={`/community/${slug}/risk`}>
               <a className={currentPath === "risk" ? styles.active : ""}>
                 Risk
               </a>
