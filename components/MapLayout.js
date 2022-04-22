@@ -44,10 +44,10 @@ const MapLayout = ({ children }) => {
           <div className="spinner"></div>
           {/*Tiny placeholder image that will load with the html, to fill in for
           the map while it's loading*/}
-          <img
+          {/*<img
             className={styles.placeholder}
             src="data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAwCdASpAAEAAPzmcxF0vKqgmIgkR4CcJaQAAEFb7Lg/lYGF5oAD+7eaH4VcTTAFkgwAAAAA="
-          />
+          />*/}
           <div
             className={styles.mapContainer}
             style={{ opacity: loaded ? 1 : 0 }}
@@ -55,7 +55,7 @@ const MapLayout = ({ children }) => {
             <Map
               onLoad={onMapLoad}
               mapboxAccessToken="pk.eyJ1IjoiYXphdmVhIiwiYSI6IkFmMFBYUUUifQ.eYn6znWt8NzYOa3OrWop8A"
-              mapStyle="mapbox://styles/mapbox/light-v10"
+              mapStyle="mapbox://styles/azavea/cl16kqex4000e14ly4f3j627p"
               initialViewState={{
                 longitude: lng,
                 latitude: lat,
@@ -65,28 +65,6 @@ const MapLayout = ({ children }) => {
               <Source id="my-data" type="geojson" data={geojson}>
                 <Layer {...layerStyle} />
               </Source>
-
-              {/*              <Source
-                id="my-raster"
-                type="raster"
-                tileSize={256}
-                minzoom={0}
-                maxzoom={8}
-                tiles={[
-                  "https://api.mapbox.com/styles/v1/azavea/cl2aczhot006215nzgt7tgf1p/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYXphdmVhIiwiYSI6IkFmMFBYUUUifQ.eYn6znWt8NzYOa3OrWop8A",
-                ]}
-              >
-                <Layer
-                  id="simple-tiles"
-                  type="raster"
-                  source="raster-tiles"
-                  minzoom={0}
-                  maxzoom={22}
-                  paint={{
-                    "raster-opacity": 0.5,
-                  }}
-                />
-              </Source>*/}
             </Map>
           </div>
         </div>
