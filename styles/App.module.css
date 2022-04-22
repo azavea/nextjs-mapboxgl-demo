@@ -10,6 +10,15 @@
 	max-height: 100%;
 }
 
+.placeholder {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	filter: blur(10px);
+}
+
 .header {
 	display: flex;
 	background: #3d4457;
@@ -55,14 +64,16 @@
 }
 
 .mapWrapper {
-	background-image: linear-gradient(270deg, #bbb, #ddd, #ddd, #bbb);
-	animation: skeleton 8s ease-in-out infinite;
-	animation-direction: alternate;
+	position: relative;
+	overflow: hidden;
 }
 
 .contentWrapper {
-	width: 400px;
+	width: 420px;
 	overflow: auto;
+	box-shadow: 0 0 10px rgb(44 44 44 / 10%);
+	z-index: 1;
+	position: relative;
 }
 
 .mapWrapper {

@@ -1,45 +1,47 @@
-import Airtable from "airtable";
 import Head from "next/head";
 import Link from "next/link";
 
-// export async function getStaticProps() {
-//   const airtable = new Airtable({
-//     apiKey: process.env.AIRTABLE_API_KEY,
-//   });
-
-//   const records = await airtable
-//     .base("appi2zZaHEKWDWKt6")("Communities")
-//     .select({
-//       fields: ["name", "lat", "lng"],
-//     })
-//     .all();
-
-//   const communities = records.map((product) => {
-//     return {
-//       name: product.get("name"),
-//       lat: product.get("lat"),
-//       lng: product.get("lng"),
-//     };
-//   });
-
-//   return {
-//     props: {
-//       communities,
-//     },
-//   };
-// }
+import PageLayout from "/components/PageLayout";
+import Similar from "/components/Similar";
+import styles from "/styles/Home.module.css";
 
 export default function Home({}) {
   return (
     <>
       <Head>
-        <title>Our app</title>
+        <title>Natural Hazard Risk</title>
         <meta
           name="description"
-          content="Current and forecasted landslide risk for Sitka, Alaska."
+          content="Learn about your community’s hazard risk in real-time"
         />
       </Head>
-      <div>Hello</div>
+      <div className={styles.content}>
+        <h1>What’s your hazard risk?</h1>
+        <p className={styles.description}>
+          Due to changes, many communities experience significant hazard risk.
+          Find out where you are most vulnerable and what you can do about it.
+        </p>
+        <input
+          type="search"
+          placeholder="This doesn’t work, click a link below"
+        />
+        <div className={styles.example}>
+          e.g.{" "}
+          <Link href="/community/new-york/overview">
+            <a>New York</a>
+          </Link>
+          ,{" "}
+          <Link href="/community/berkeley/overview">
+            <a>Berkeley</a>
+          </Link>
+          ,{" "}
+          <Link href="/community/greater-sudsbury/overview">
+            <a>Greater Sudsbury</a>
+          </Link>
+        </div>
+      </div>
     </>
   );
 }
+
+Home.PageLayout = PageLayout;

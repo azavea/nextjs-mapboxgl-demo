@@ -1,0 +1,30 @@
+.content {
+  margin-top: var(--space-500);
+}
+
+.content h1 {
+  font-size: var(--size-1000);
+  font-weight: var(--weight-black);
+  margin-bottom: var(--space-400);
+  margin-top: 10vh;
+}
+
+.description {
+  margin-bottom: var(--space-500);
+  font-size: var(--size-700);
+}
+
+.content input {
+  height: 50px;
+  width: 100%;
+  font-size: var(--size-600);
+  padding: var(--space-200) var(--space-200);
+  border: 1px solid var(--gray-900);
+  pointer-events: no;
+  cursor: not-allowed;
+}
+
+.example {
+  font-size: var(--size-600);
+  margin-top: var(--space-500);
+}
