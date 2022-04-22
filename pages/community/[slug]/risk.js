@@ -8,15 +8,6 @@ import MapLayout from "/components/MapLayout";
 
 import styles from "/styles/App.module.css";
 
-import { useAppSelector, useAppDispatch } from "/app/hooks";
-import {
-  decrement,
-  increment,
-  setPage,
-  selectCount,
-  selectPage,
-} from "/app/counterSlice";
-
 export async function getStaticPaths() {
   const communities = await getCommunities();
 
