@@ -1,14 +1,84 @@
-.app {
-	width: 100%;
-	height: 100%;
+.root {
 	display: flex;
 	flex-direction: column;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	max-height: 100%;
+}
+
+.header {
+	display: flex;
+	background: #3d4457;
+	padding: 0 var(--space-300);
+}
+
+.header * {
+	color: #fff;
+}
+
+.header nav {
+	align-self: center;
+}
+
+.header h2 {
+	flex: 1;
+}
+
+.header ul {
+	list-style: none;
+	margin: 0;
+}
+
+.header li {
+	display: inline-block;
+}
+
+.header li:not(:last-child) {
+	margin-right: var(--space-300);
+}
+
+.app {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	overflow: hidden;
+}
+
+.mapContainer {
+	transition: opacity 0.4s ease-in-out;
+	height: 100%;
+}
+
+.mapWrapper {
+	background-image: linear-gradient(270deg, #bbb, #ddd, #ddd, #bbb);
+	animation: skeleton 8s ease-in-out infinite;
+	animation-direction: alternate;
+}
+
+.contentWrapper {
+	width: 400px;
+	overflow: auto;
+}
+
+.mapWrapper {
+	flex: 1;
+}
+
+.active {
+	font-weight: 900;
 }
 
 .content {
 	max-width: 800px;
+	padding: var(--space-300);
 	margin-left: auto;
 	margin-right: auto;
+	overflow-y: auto;
 }
 
 .map {

@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <>
-        <Header />
         {Component.PageLayout ? (
           <Component.PageLayout>
             <Component {...pageProps} />
@@ -22,7 +21,6 @@ function MyApp({ Component, pageProps }) {
         ) : (
           <Component {...pageProps} />
         )}
-        <Footer />
       </>
     </Provider>
   );
