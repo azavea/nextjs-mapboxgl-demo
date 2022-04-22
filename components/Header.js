@@ -24,8 +24,8 @@ const links = [
     permalink: "/community/philadelphia/overview/",
   },
   {
-    text: "Greater Sudsbury",
-    permalink: "/community/greater-sudsbury/overview/",
+    text: "Greater Sudbury",
+    permalink: "/community/greater-sudbury/overview/",
   },
 ];
 

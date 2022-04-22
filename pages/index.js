@@ -35,8 +35,8 @@ export default function Home({}) {
             <a>Berkeley</a>
           </Link>
           ,{" "}
-          <Link prefetch={false} href="/community/greater-sudsbury/overview">
-            <a>Greater Sudsbury</a>
+          <Link prefetch={false} href="/community/greater-sudbury/overview">
+            <a>Greater Sudbury</a>
           </Link>
         </div>
       </div>
