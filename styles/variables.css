@@ -48,10 +48,23 @@
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-@supports (color: color(display-p3 1 1 1)) {
+@media screen and (max-width: 800px) {
   :root {
-    --risk0: color(display-p3 0 0.485 0.4);
-    --risk1: color(display-p3 0.9 0.709 0);
-    --risk2: color(display-p3 0.875 0 0.103);
+    --space-900: 27px;
+    --space-800: 24px;
+    --space-700: 21px;
+    --space-600: 18px;
+    --space-500: 15px;
+    --space-400: 12px;
+    --space-300: 9px;
+    --space-200: 6px;
+    --space-100: 3px;
+
+    --size-1000: 36px;
+    --size-900: 30px;
+    --size-800: 24px;
+    --size-700: 21px;
+    --size-600: 18px;
+    --size-500: 16px;
   }
 }

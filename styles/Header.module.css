@@ -80,3 +80,17 @@
 .menu a:not(:last-child) {
   border-bottom: 1px solid var(--gray-300);
 }
+
+@media screen and (max-width: 800px) {
+  .header {
+    height: 44px;
+  }
+
+  .button {
+    font-size: var(--size-500);
+  }
+
+  .brand {
+    font-size: var(--size-500);
+  }
+}

@@ -96,3 +96,59 @@
 .map {
 	flex: 1;
 }
+
+@media screen and (max-width: 800px) {
+	.app {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.map-wrapper {
+		height: 25vh;
+	}
+
+	.header {
+		flex-direction: column;
+	}
+
+	.content {
+		padding-top: var(--space-200);
+	}
+
+	.content h3 {
+		margin: var(--space-400) 0 var(--space-300);
+	}
+
+	.header nav {
+		align-self: inherit;
+		border-top: 1px solid rgb(255 255 255 / 0.1);
+		padding: var(--space-400) var(--space-300);
+		margin-left: calc(-1 * var(--space-300));
+		margin-right: calc(-1 * var(--space-300));
+	}
+
+	.mapWrapper {
+		order: -1;
+		height: 25vh;
+		flex-shrink: 0;
+		flex: none;
+	}
+
+	.mapContainer {
+		height: 25vh;
+	}
+
+	.contentWrapper {
+		width: auto;
+		box-shadow: none;
+	}
+
+	.content p {
+		font-size: var(--size-500);
+	}
+
+	.app {
+		overflow: unset;
+	}
+}

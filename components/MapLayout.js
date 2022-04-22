@@ -54,6 +54,7 @@ const MapLayout = ({ children }) => {
           >
             <Map
               onLoad={onMapLoad}
+              cooperativeGestures={true}
               mapboxAccessToken="pk.eyJ1IjoiYXphdmVhIiwiYSI6IkFmMFBYUUUifQ.eYn6znWt8NzYOa3OrWop8A"
               mapStyle="mapbox://styles/azavea/cl16kqex4000e14ly4f3j627p"
               initialViewState={{

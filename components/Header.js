@@ -30,7 +30,13 @@ const links = [
 ];
 
 const Header = () => {
-  const { buttonProps, itemProps, isOpen } = useDropdownMenu(links.length);
+  const { buttonProps, itemProps, isOpen, setIsOpen } = useDropdownMenu(
+    links.length
+  );
+
+  function closeMenu() {
+    setIsOpen(false);
+  }
 
   return (
     <div className={styles.header}>
@@ -54,7 +60,7 @@ const Header = () => {
           >
             {links.map((link) => (
               <Link prefetch={false} key={link.permalink} href={link.permalink}>
-                <a>{link.text}</a>
+                <a onClick={closeMenu}>{link.text}</a>
               </Link>
             ))}
           </div>
