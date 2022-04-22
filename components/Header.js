@@ -12,12 +12,20 @@ const links = [
     permalink: "/",
   },
   {
-    text: "About",
-    permalink: "/about/",
+    text: "New York",
+    permalink: "/community/new-york/overview/",
   },
   {
-    text: "Areas at risk",
-    permalink: "/areas-at-risk/",
+    text: "Berkeley",
+    permalink: "/community/berkeley/overview/",
+  },
+  {
+    text: "Philadelphia",
+    permalink: "/community/philadelphia/overview/",
+  },
+  {
+    text: "Greater Sudsbury",
+    permalink: "/community/greater-sudsbury/overview/",
   },
 ];
 
@@ -40,11 +48,14 @@ const Header = () => {
           >
             <Icon name="bars" />
           </button>
-          <div className={`${styles.menu} ${isOpen ? styles.menuopen : ""}`} role="menu">
+          <div
+            className={`${styles.menu} ${isOpen ? styles.menuopen : ""}`}
+            role="menu"
+          >
             {links.map((link) => (
-              <a key={link.permalink} href={link.permalink}>
-                {link.text}
-              </a>
+              <Link key={link.permalink} href={link.permalink}>
+                <a>{link.text}</a>
+              </Link>
             ))}
           </div>
         </div>

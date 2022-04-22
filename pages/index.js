@@ -2,34 +2,34 @@ import Airtable from "airtable";
 import Head from "next/head";
 import Link from "next/link";
 
-export async function getStaticProps() {
-  const airtable = new Airtable({
-    apiKey: process.env.AIRTABLE_API_KEY,
-  });
+// export async function getStaticProps() {
+//   const airtable = new Airtable({
+//     apiKey: process.env.AIRTABLE_API_KEY,
+//   });
 
-  const records = await airtable
-    .base("appi2zZaHEKWDWKt6")("Communities")
-    .select({
-      fields: ["name", "lat", "lng"],
-    })
-    .all();
+//   const records = await airtable
+//     .base("appi2zZaHEKWDWKt6")("Communities")
+//     .select({
+//       fields: ["name", "lat", "lng"],
+//     })
+//     .all();
 
-  const communities = records.map((product) => {
-    return {
-      name: product.get("name"),
-      lat: product.get("lat"),
-      lng: product.get("lng"),
-    };
-  });
+//   const communities = records.map((product) => {
+//     return {
+//       name: product.get("name"),
+//       lat: product.get("lat"),
+//       lng: product.get("lng"),
+//     };
+//   });
 
-  return {
-    props: {
-      communities,
-    },
-  };
-}
+//   return {
+//     props: {
+//       communities,
+//     },
+//   };
+// }
 
-export default function Home({ communities }) {
+export default function Home({}) {
   return (
     <>
       <Head>
@@ -39,11 +39,7 @@ export default function Home({ communities }) {
           content="Current and forecasted landslide risk for Sitka, Alaska."
         />
       </Head>
-      <div>
-        {communities.map((community) => (
-          <div>{community.name}</div>
-        ))}
-      </div>
+      <div>Hello</div>
     </>
   );
 }
