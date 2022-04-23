@@ -110,3 +110,27 @@ hr {
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+.spinner {
+  height: 21px;
+  width: 21px;
+  color: rgba(90, 90, 90, 0.2);
+  position: absolute;
+  display: inline-block;
+  border: 3px solid;
+  border-radius: 50%;
+  border-right-color: #5a5a5a;
+  animation: rotate 1s linear infinite;
+  margin: auto;
+  right: 12px;
+  bottom: 8px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

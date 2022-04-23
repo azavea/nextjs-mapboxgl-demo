@@ -3,7 +3,7 @@
   padding: 0 var(--space-300);
   display: flex;
   color: var(--white);
-  height: 48px;
+  height: var(--header-height);
   align-items: center;
 }
 
@@ -83,7 +83,7 @@
 
 @media screen and (max-width: 800px) {
   .header {
-    height: 44px;
+    height: var(--header-height);
   }
 
   .button {

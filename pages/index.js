@@ -23,7 +23,7 @@ export default function Home({}) {
         </p>
         <input
           type="search"
-          placeholder="This doesn’t work, click a link below"
+          placeholder="This search doesn’t work, click a link below"
         />
         <div className={styles.example}>
           e.g.{" "}

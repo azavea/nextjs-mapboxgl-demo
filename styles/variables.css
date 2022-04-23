@@ -29,6 +29,8 @@
   --space-200: 8px;
   --space-100: 4px;
 
+  --header-height: 48px;
+
   --size-1000: 50px;
   --size-900: 38px;
   --size-800: 28px;
@@ -59,6 +61,8 @@
     --space-300: 9px;
     --space-200: 6px;
     --space-100: 3px;
+
+    --header-height: 48px;
 
     --size-1000: 36px;
     --size-900: 30px;

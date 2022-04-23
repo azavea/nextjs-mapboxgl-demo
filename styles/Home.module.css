@@ -1,12 +1,13 @@
 .content {
-  margin-top: var(--space-500);
+  margin-top: 0;
+  align-self: center;
 }
 
 .content h1 {
   font-size: var(--size-1000);
   font-weight: var(--weight-black);
   margin-bottom: var(--space-400);
-  margin-top: 10vh;
+  margin-top: 0;
 }
 
 .description {

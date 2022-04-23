@@ -25,7 +25,7 @@ const MapLayout = ({ children }) => {
     id: "point",
     type: "circle",
     paint: {
-      "circle-radius": 10,
+      "circle-radius": 8,
       "circle-color": color,
     },
   };
@@ -60,7 +60,7 @@ const MapLayout = ({ children }) => {
               initialViewState={{
                 longitude: lng,
                 latitude: lat,
-                zoom: 12,
+                zoom: 9,
               }}
             >
               <Source id="my-data" type="geojson" data={geojson}>

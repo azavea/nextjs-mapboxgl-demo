@@ -11,22 +11,6 @@ const links = [
     text: "Homepage",
     permalink: "/",
   },
-  {
-    text: "New York",
-    permalink: "/community/new-york/overview/",
-  },
-  {
-    text: "Berkeley",
-    permalink: "/community/berkeley/overview/",
-  },
-  {
-    text: "Philadelphia",
-    permalink: "/community/philadelphia/overview/",
-  },
-  {
-    text: "Greater Sudbury",
-    permalink: "/community/greater-sudbury/overview/",
-  },
 ];
 
 const Header = () => {
