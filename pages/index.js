@@ -16,29 +16,34 @@ export default function Home({}) {
         />
       </Head>
       <div className={styles.content}>
-        <h1>What’s your hazard risk?</h1>
+        <h2>What’s your hazard risk?</h2>
         <p className={styles.description}>
           Due to changes, many communities experience significant hazard risk.
           Find out where you are most vulnerable and what you can do about it.
         </p>
-        <input
-          type="search"
-          placeholder="This search doesn’t work, click a link below"
-        />
-        <div className={styles.example}>
-          e.g.{" "}
-          <Link prefetch={false} href="/community/new-york/overview">
-            <a>New York</a>
-          </Link>
-          ,{" "}
-          <Link prefetch={false} href="/community/berkeley/overview">
-            <a>Berkeley</a>
-          </Link>
-          ,{" "}
-          <Link prefetch={false} href="/community/greater-sudbury/overview">
-            <a>Greater Sudbury</a>
-          </Link>
-        </div>
+        <h3>Select a city</h3>
+        <ul className={styles.example}>
+          <li>
+            <Link prefetch={false} href="/community/new-york/overview">
+              <a>New York</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href="/community/berkeley/overview">
+              <a>Berkeley</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href="/community/greater-sudbury/overview">
+              <a>Greater Sudbury</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch={false} href="/community/philadelphia/overview">
+              <a>Philadelphia</a>
+            </Link>
+          </li>
+        </ul>
       </div>
     </>
   );

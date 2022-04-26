@@ -11,6 +11,10 @@ const links = [
     text: "Homepage",
     permalink: "/",
   },
+  {
+    text: "Github",
+    permalink: "https://github.com/azavea/nextjs-demo-app",
+  },
 ];
 
 const Header = () => {

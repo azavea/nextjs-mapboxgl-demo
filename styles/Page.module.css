@@ -2,7 +2,23 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  min-height: calc(100vh - var(--header-height));
   padding: var(--space-300);
+  padding-top: 5vh;
   display: flex;
+}
+
+.container h2 {
+  font-size: var(--size-1000);
+}
+
+.container h3 {
+  font-size: var(--size-800);
+  margin-top: var(--space-500);
+  margin-bottom: -6px;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding-top: 3vh;
+  }
 }
